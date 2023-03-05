@@ -43,7 +43,13 @@ if __name__ == "__main__":
 
     config_pretty(cfg)
 
-    model = instantiate_from_config(cfg.model)
+    dwt2d_encoder, dwt2d_decoder = instantiate_from_config(cfg.init_img_transform), instantiate_from_config(
+        cfg.final_img_itransform)
+
+    model = instantiate_from_config(cfg.model,
+                                    init_img_transform=dwt2d_encoder,
+                                    final_img_itransform=dwt2d_decoder)
+
     diffusion_model = instantiate_from_config(cfg.diffusion_model, model=model)
 
     trainer = Trainer(

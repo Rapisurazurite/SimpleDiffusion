@@ -1,12 +1,12 @@
 model:
   name: denoising_diffusion_pytorch.simple_diffusion.UViT
   params:
-    dim: 128
+    dim: 256
     dim_mults: [1, 2, 4, 8]
 
 
 diffusion_model:
   name: denoising_diffusion_pytorch.simple_diffusion.GaussianDiffusion
   params:
-    image_size: 128
+    image_size: 256
     noise_d: 64

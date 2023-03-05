@@ -4,7 +4,7 @@ from omegaconf import OmegaConf
 
 config = OmegaConf.load('config/simple_diffusion.yaml')
 model = instantiate_from_config(config.model)
-diffusion = instantiate_from_config(config.diffusion,
+diffusion = instantiate_from_config(config.diffusion_model,
                                     model=model)
 
 # input = torch.randn(1, 3, 128, 128)

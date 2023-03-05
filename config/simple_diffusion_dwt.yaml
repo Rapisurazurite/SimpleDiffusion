@@ -1,0 +1,25 @@
+model:
+  name: denoising_diffusion_pytorch.simple_diffusion.UViT
+  params:
+    dim: 128
+    dim_mults: [1, 2, 4, 8]
+    channels:   12
+
+diffusion_model:
+  name: denoising_diffusion_pytorch.simple_diffusion.GaussianDiffusion
+  params:
+    image_size: 256
+    noise_d: 64
+
+
+init_img_transform:
+  name: module.dwt_transform.Dwt2dEncoder
+  params:
+    wave: haar
+    mode: zero
+
+final_img_itransform:
+  name: module.dwt_transform.Dwt2dDecoder
+  params:
+    wave: haar
+    mode: zero
