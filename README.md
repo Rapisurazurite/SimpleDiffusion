@@ -9,3 +9,5 @@ accelerate launch --multi_gpu --main_process_port 25641 --gpu_ids=2,3 train_dwt.
 
 Note:
 dwt version generate bad quality sample.
+
+checkpoint can be found here: https://lazurite.vercel.app/Simple%20Diffusion.
